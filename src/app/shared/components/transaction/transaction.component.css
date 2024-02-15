@@ -1,0 +1,10 @@
+.transaction-texts {
+  @apply text-xs text-[#949494] font-medium;
+}
+
+@media (max-width: 639px) {
+  .gridTemplateColumns2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}

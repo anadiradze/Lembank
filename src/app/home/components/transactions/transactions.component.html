@@ -1,0 +1,34 @@
+<div class="flex justify-between">
+  <h4 class="mb-9 font-semibold text-lg">Transactions</h4>
+  <span class="beforeMobile:hidden text-sm text-[#949494] font-medium">View all</span>
+</div>
+
+<div class="flex gap-10 mb-2.5 mobile:hidden">
+  <h6>History</h6>
+  <h6>Upcoming</h6>
+</div>
+
+<div
+  class="relative border-[1px] border-solid border-[#D9D9D9] rounded-3xl mobile:hidden"
+>
+  <div
+    class="absolute w-14 border-2 border-solid border-[#F86F03] rounded-3xl top-[-2px] left-[-2px]"
+  ></div>
+</div>
+<div
+  class="grid grid-cols-3 gap-10 text-sm text-[#949494] font-medium py-3 mobile:hidden"
+>
+  <h6 class="font-bold">Name of Transaction</h6>
+  <h6 class="font-bold">Category</h6>
+  <h6 class="font-bold">Amount</h6>
+</div>
+<div class="flex flex-col gap-5">
+  <div
+    class="border-[1px] border-solid border-[#D9D9D9] rounded-3xl mobile:hidden"
+  ></div>
+  <app-transaction
+    *ngFor="let transaction of transactions; let first = first"
+    [isFirst]="first"
+    [transaction]="transaction"
+  ></app-transaction>
+</div>

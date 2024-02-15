@@ -1,0 +1,31 @@
+<div class="pl-14 pr-28 mobile:hidden">
+  <h1 class="mb-9 font-bold text-lg">Lembank.</h1>
+  <nav>
+    <ul class="nav-list">
+      <li
+        *ngFor="let item of navItems; let i = index"
+        class="flex gap-8 cursor-pointer"
+      >
+        <a class="link-to-nav-item">
+          <img [src]="item.icon" [alt]="item.altText" />
+          <span>{{ item.name }}</span>
+        </a>
+      </li>
+    </ul>
+    <div
+      class="top-0 border-b-[1px] border-solid border-[#ECECEC] w-36 h-0"
+    ></div>
+
+    <ul class="nav-list">
+      <li
+        *ngFor="let item of navSettingItems; let i = index"
+        class="flex gap-8 cursor-pointer"
+      >
+        <a class="link-to-nav-item">
+          <img [src]="item.icon" [alt]="item.altText" />
+          <span>{{ item.name }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

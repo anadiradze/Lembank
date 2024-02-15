@@ -1,0 +1,28 @@
+<div
+  *ngIf="cardInfo"
+  class="flex flex-col bg-white rounded-lg py-2.5 px-3 gap-4"
+>
+  <div class="flex gap-2 justify-start items-start">
+    <div
+      class="w-12 h-12 rounded-full bg-white flex items-center justify-center border-[1px] border-solid border-[#F6F6F6]"
+    >
+      <img [src]="cardInfo.logo" [alt]="cardInfo.title" />
+    </div>
+    <div class="flex flex-col">
+      <h5 class="font-semibold text-lg">{{ cardInfo.title }}</h5>
+      <span class="font-medium text-sm text-[#949494]">{{
+        cardInfo.description
+      }}</span>
+    </div>
+  </div>
+  <div class=""></div>
+
+  <div class="relative border-[1px] border-solid border-[#D9D9D9] rounded-3xl">
+    <div
+      class="absolute w-14 border-2 border-solid border-[#F86F03] rounded-3xl top-[-2px] left-[-2px]"
+      [ngStyle]="{ width: cardInfo.progress }"
+    ></div>
+  </div>
+
+  <span class="font-semibold text-lg">{{ cardInfo.amount | currency }}</span>
+</div>

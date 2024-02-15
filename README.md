@@ -1,27 +1,53 @@
-# Lembank
+# LEMBANK Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+## **Overview**
 
-## Development server
+LEMBANK is a responsive web application designed to align with a [Figma prototype](https://www.figma.com/file/hvvaDU16z02jomIzf0R5vL/Untitled?type=design&node-id=0-1&mode=design&t=UxyzNdQ86fWVY86X-0). Built with Angular, state management is handled by _NgRx_, and RxJS is used for reactive programming patterns.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## **Prerequisites**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Docker Desktop is required for managing the application's containers.
+- Node.js and npm must be installed for package management and script execution.
 
-## Build
+## **Installation**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. The repository can be cloned to a local machine.
+2. The local API is available for download at [Lembank-API](https://github.com/anadiradze/Lembank-API).
+3. Docker Desktop should be installed and running.
+4. A terminal can be used to navigate to the directory where the API has been cloned.
+5. `docker-compose build` is to be executed.
+6. After building, `docker-compose up` should be run to initiate the local API server.
+7. Dependencies are installed by navigating to the project directory and running `npm install`.
+8. The development server can be started with `ng serve`.
 
-## Running unit tests
+## **State Management**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+State is managed using _NgRx_, which provides a robust framework for handling state transitions within the app.
 
-## Running end-to-end tests
+## **Features**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Functional **Login** and **Registration** components are present, with backend integration.
+- Custom pipes are included for enhanced template data manipulation.
+- A collection of reusable components can be found within the `shared` directory.
 
-## Further help
+## **Routing**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- The path `localhost:4200/login` opens the Login page, where users can sign in to their accounts.
+- The path `localhost:4200/register` navigates to the Registration page for account creation.
+- After authentication, the path `localhost:4200/home` leads to the main Dashboard, which displays user-specific information such as balance and transactions.
+
+## **Project Structure**
+
+- `src/app/auth`: Contains authentication-related components and services.
+- `src/app/home`: Houses components like `balance`, `transactions`, which make up the dashboard.
+- `src/app/shared`: Shared components, pipes, and services are located here.
+- `*.routes.ts`: Routing configuration files for the app.
+
+## **Backend**
+
+A local API is provided.
+
+## **Styling**
+
+Responsive styling is consistent with the Figma design specifications provided.

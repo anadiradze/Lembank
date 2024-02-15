@@ -1,0 +1,24 @@
+<div *ngIf="transaction" class="grid grid-cols-3 gap-10 gridTemplateColumns2">
+  <div class="flex justify-start gap-12 items-start">
+    <div
+      class="w-12 h-12 rounded-full bg-[#F6F6F6] flex items-center justify-center"
+    >
+      <img src="{{ transaction.logo }}" alt="logo" class="w-6 h-6" />
+    </div>
+
+    <div class="flex flex-col">
+      <h5 class="font-semibold text-sm">
+        {{ transaction.title }}
+      </h5>
+      <span class="transaction-texts tablet:whitespace-nowrap">{{
+        transaction.date | date
+      }}</span>
+    </div>
+  </div>
+  <div class="transaction-texts mobile:hidden">
+    {{ transaction.category }}
+  </div>
+  <div [ngClass]="{ 'text-[#72BB38]': isFirst }" class="font-semibold text-sm font-inter">
+    {{ transaction.amount | currency }}
+  </div>
+</div>

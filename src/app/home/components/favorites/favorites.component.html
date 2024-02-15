@@ -1,0 +1,25 @@
+<div class="flex flex-col gap-4 bg-[#F6F6F6] px-6 py-5 rounded-lg">
+    <h4 class="font-semibold text-lg">{{ cardTitleFavorites }}</h4>
+    <div class="grid grid-cols-4 bg-white rounded-lg py-2.5 px-3">
+      <div
+        *ngFor="let favorite of favorites"
+        class="flex flex-col items-center"
+      >
+        <img
+          [src]="favorite.img"
+          [alt]="favorite.firstName"
+          class="w-12 h-12 object-cover"
+        />
+        <span>{{ favorite.firstName }}</span>
+      </div>
+    </div>
+
+    <div *ngFor="let button of buttons">
+      <div class="flex flex-col">
+        <app-button
+          [buttonClasses]="button.classes"
+          [buttonTxt]="button.text"
+        ></app-button>
+      </div>
+    </div>
+  </div>

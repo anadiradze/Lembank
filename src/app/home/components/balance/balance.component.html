@@ -1,0 +1,70 @@
+<div class="font-semibold mb-8">
+  <div class="flex gap-40 mb-11 flex-wrap mobile:mb-0">
+    <div class="flex flex-col">
+      <h4 class="text-lg">Total Balance</h4>
+      <div class="flex">
+        <span
+          [innerHTML]="12432 | currencyCustomFormat"
+          class="text-4xl font-inter"
+        ></span>
+        <div class="flex items-end pb-1 pl-1 mobile:items-center">
+          <img
+            src="../../../../assets/balance/eye.svg"
+            alt="eye"
+            class="beforeMobile:hidden"
+          />
+          <span
+            class="flex text-center justify-center bg-[#72BB38] rounded-[10px] text-[#FFFFFF] font-medium text-[12px] px-[7px] mobile:hidden"
+            >+32%</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col justify-around mobile:hidden">
+      <h4 class="text-lg">Credit Limit</h4>
+      <span [innerHTML]="40000 | currencyCustomFormat" class="text-xl font-inter"></span>
+    </div>
+  </div>
+  <div class="w-full flex justify-between mb-7 mobile:relative">
+    <h4 class="text-lg mobile:hidden">Cards</h4>
+    <button
+      class="py-1 px-2 border-[1px] border-solid border-[#E7E7E7] rounded-[10px] font-medium text-xs bg-[#FFFFFF] color-[#E7E7E7] mobile:absolute mobile:top-[-35px] mobile:right-0"
+    >
+      Add Card
+    </button>
+  </div>
+  <div class="flex gap-7">
+    <app-card
+      *ngFor="let card of cards; let i = index"
+      [card]="card"
+      [ngClass]="{ 'mobile:hidden': i === cards.length - 1 }"
+    ></app-card>
+  </div>
+  <div
+    class="beforeMobile:hidden flex flex-col gap-3 justify-center items-center mt-3"
+  >
+    <img
+      src="../../../../assets/balance/dots.svg"
+      alt="dots"
+      class="mobile:w-[40px]"
+    />
+    <div class="flex gap-3 items-center w-full">
+      <div class="flex justify-center items-center gap-3 border-b-[1px] border-solid border-black pb-2 w-full">
+        <img
+          src="../../../../assets/balance/send.svg"
+          alt="dots"
+          class="mobile:w-[40px]"
+        />
+        <span>Receive</span>
+      </div>
+      <div class="flex justify-center items-center gap-3 border-b-[1px] border-solid border-black pb-2 w-full">
+        <img
+          src="../../../../assets/balance/receive.svg"
+          alt="dots"
+          class="mobile:w-[40px]"
+        />
+        <span>Send</span>
+      </div>
+    </div>
+  </div>
+</div>

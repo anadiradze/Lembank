@@ -1,0 +1,17 @@
+<div
+  *ngIf="card"
+  [ngStyle]="{ 'background-color': card.bgColor, color: card.color }"
+  class="w-80 h-44 flex flex-col justify-between items-center p-5 rounded-[10px] border-[1px] border-[#E7E7E7]"
+>
+  <div class="w-full flex justify-between">
+    <img [src]="card.logo" alt="logo" />
+    <img [src]="card.seeMore" alt="seeMore" />
+  </div>
+  <div class="w-full flex justify-between items-center font-semibold">
+    <span class="text-2xl">{{ card.amount | currency }}</span>
+    <div class="flex flex-col items-end">
+      <span class="text-sm">{{ "**** " + card.cardNum }}</span>
+      <span class="text-xs">{{ card.date | date : "mm/yy" }}</span>
+    </div>
+  </div>
+</div>

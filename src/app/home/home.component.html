@@ -1,0 +1,18 @@
+<div class="flex py-10 mobile:justify-center mobile:items-center">
+  <app-sidebar></app-sidebar>
+  <div class="flex flex-col">
+    <app-header></app-header> 
+    <div class="flex">
+      <div class="px-10 mobile:px-5">
+        <app-balance></app-balance>
+        <app-transactions></app-transactions>
+      </div>
+      <div class="flex flex-col gap-8 justify-end tablet:hidden">
+        <app-favorites></app-favorites>
+        <app-my-savings></app-my-savings>
+      </div>
+    </div>
+  </div>
+</div>
+
+
