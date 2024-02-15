@@ -21,13 +21,13 @@ import { ButtonComponent } from 'src/app/shared/components/button/button.compone
     CommonModule,
     RouterLink,
     backendErrorMessages,
-    ButtonComponent
+    ButtonComponent,
   ],
 })
 export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
-    private store: Store<{ auth: AuthStateInterface }> // private authService: AuthService
+    private store: Store<{ auth: AuthStateInterface }>
   ) {}
 
   form = this.fb.nonNullable.group({
@@ -48,6 +48,4 @@ export class RegisterComponent {
     };
     this.store.dispatch(authActions.register({ request }));
   }
-
-
 }

@@ -9,20 +9,18 @@
       navigateTo="/login"
     ></app-button>
   </div>
-  <div class="flex justify-between items-start pl-14 gap-44  mobile:flex-col-reverse mobile:px-0 mobile:gap-10">
+  <div
+    class="flex justify-between items-start pl-14 gap-44 mobile:flex-col-reverse mobile:px-0 mobile:gap-10"
+  >
     <ng-container *ngIf="data$ | async as data">
       <div class="flex flex-col gap-3.5">
         <h2 class="font-medium text-3xl text-[#5D5C61]">Sign up</h2>
-        <!-- <p class="text-xs-center">
-          <a routerLink="/login" routerLinkActive="router-link-active"
-            >Have an account?</a
-          >
-        </p> -->
-
         <div class="border-t-2 border-solid border-gray-400">
           <lem-backend-error-messages
+            class="text-red-600"
             *ngIf="data.backendErrors"
             [backendErrors]="data.backendErrors"
+            [includeFieldName]="false"
           >
           </lem-backend-error-messages>
           <form
@@ -30,7 +28,6 @@
             (ngSubmit)="onSubmit()"
             class="flex flex-col gap-5 py-5"
           >
-            <!-- Username -->
             <div class="flex flex-col gap-2">
               <label for="username" class="form-label block mb-2"
                 >Name & Last Name</label
@@ -43,7 +40,6 @@
                 formControlName="username"
               />
             </div>
-            <!-- Email -->
             <div class="flex flex-col gap-2">
               <label for="email" class="form-label block mb-2">Email</label>
               <input
@@ -55,7 +51,6 @@
               />
             </div>
 
-            <!-- Password -->
             <div class="flex flex-col gap-2">
               <label for="password" class="form-label block mb-2"
                 >Password</label
@@ -68,13 +63,6 @@
                 formControlName="password"
               />
             </div>
-            <!-- <button
-              type="submit"
-              class="btn btn-lg btn-primary pull-xs-right mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              [disabled]="data.isSubmitting"
-            >
-              Sign Up
-            </button> -->
             <app-button
               [buttonClasses]="
                 'w-full text-white bg-[#F86F03] border-[1px] border-solid rounded-lg px-24 py-2 mt-9'

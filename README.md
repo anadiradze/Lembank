@@ -4,7 +4,6 @@
 
 LEMBANK is a responsive web application designed to align with a [Figma prototype](https://www.figma.com/file/hvvaDU16z02jomIzf0R5vL/Untitled?type=design&node-id=0-1&mode=design&t=UxyzNdQ86fWVY86X-0). Built with Angular, state management is handled by _NgRx_, and RxJS is used for reactive programming patterns.
 
-
 ## **Prerequisites**
 
 - Docker Desktop is required for managing the application's containers.
@@ -30,6 +29,15 @@ State is managed using _NgRx_, which provides a robust framework for handling st
 - Functional **Login** and **Registration** components are present, with backend integration.
 - Custom pipes are included for enhanced template data manipulation.
 - A collection of reusable components can be found within the `shared` directory.
+
+## **Validations**
+
+During registration and login, the application enforces several checks to ensure data integrity and security:
+
+- **Email**: Must be provided and follow a valid email format.This is a required field during registration.
+- **Password**: A minimum of 8 characters is required for the password.This is a required field during registration.
+- **Username**: This is a required field during registration.
+- **Email or Password Error**: Users are alerted if either the email or password entered is incorrect during login.
 
 ## **Routing**
 

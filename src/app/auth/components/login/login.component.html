@@ -10,13 +10,17 @@
     >
     </app-button>
   </div>
-  <div class="flex justify-between items-start pl-14 gap-44 mobile:flex-col-reverse mobile:px-0 mobile:gap-10">
+  <div
+    class="flex justify-between items-start pl-14 gap-44 mobile:flex-col-reverse mobile:px-0 mobile:gap-10"
+  >
     <ng-container *ngIf="data$ | async as data">
-      <div class="flex flex-col gap-3.5 ">
+      <div class="flex flex-col gap-3.5">
         <h2 class="font-medium text-3xl text-[#5D5C61]">Sign In</h2>
         <lem-backend-error-messages
+          class="text-red-600"
           *ngIf="data.backendErrors"
           [backendErrors]="data.backendErrors"
+          [includeFieldName]="true"
         >
         </lem-backend-error-messages>
         <form
@@ -34,8 +38,6 @@
               formControlName="email"
             />
           </div>
-
-          <!-- Password -->
           <div class="flex flex-col gap-2">
             <label for="password" class="form-label block mb-2">Password</label>
             <input
@@ -46,21 +48,12 @@
               formControlName="password"
             />
           </div>
-          <!-- <button
-            type="submit"
-            class="btn btn-lg btn-primary pull-xs-right"
-            [disabled]="data.isSubmitting"
-            routerLink="/home" routerLinkActive="router-link-active"
-          >
-            Sign In
-          </button> -->
           <app-button
             [buttonClasses]="
               'w-full text-white bg-[#F86F03] border-[1px] border-solid rounded-lg px-24 py-2 mt-9'
             "
             buttonTxt="Login"
             [isDisabled]="data.isSubmitting"
-            navigateTo="/home"
             type="submit"
           >
           </app-button>

@@ -9,12 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./sidebar.component.css'],
 })
 export class SidebarComponent {
-  // interface NavItem {
-  //   name: string;
-  //   link: string;
-  //   icon: string;
-  //   altText: string;
-  // }
 
   navItems: any[] = [
     {

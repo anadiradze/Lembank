@@ -10,12 +10,13 @@ import { CommonModule } from '@angular/common';
 })
 export class backendErrorMessages implements OnInit {
   @Input() backendErrors: BackendErrorsInterface = {};
+  @Input() includeFieldName: boolean = true; // New input to control field name inclusion
 
   errorMessages: string[] = [];
   ngOnInit(): void {
     this.errorMessages = Object.keys(this.backendErrors).map((name: string) => {
       const messages = this.backendErrors[name].join(' ');
-      return `${name} ${messages}`;
+      return this.includeFieldName ? `${name} ${messages}` : `${messages}`;
     });
   }
 }
