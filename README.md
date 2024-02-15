@@ -58,4 +58,4 @@ A local API is provided.
 
 ## **Styling**
 
-Responsive styling is consistent with the Figma design specifications provided.
+Responsive styling is consistent with the Figma design specifications provided and has been tailored to provide an optimal viewing experience on laptop screens and mobile devices with a minimum width of 335px.
